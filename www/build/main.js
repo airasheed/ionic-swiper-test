@@ -55,28 +55,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var HomePage = (function () {
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.config = {
-            effect: 'coverflow',
-            grabCursor: true,
-            loop: true,
-            spaceBetween: '10%',
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            coverflowEffect: {
-                rotate: 0,
-                depth: 100,
-                slideShadows: true,
-            }
-        };
     }
+    HomePage.prototype.ngOnInit = function () {
+        this.slides.effect = 'coverflow';
+        this.slides.centeredSlides = true;
+        this.slides.slidesPerView = 1;
+        this.slides.spaceBetween = '2';
+        this.slides.coverflow = {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        };
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Slides */]),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Slides */]) === "function" && _a || Object)
+    ], HomePage.prototype, "slides", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Volumes/Project/Ionic slide/slides/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div #usefulSwiper [swiper]="config" class="swiper-container">\n    <div class="swiper-wrapper">\n        <div class="swiper-slide">1</div>\n        <div class="swiper-slide">2</div>\n        <div class="swiper-slide">3</div>\n        <div class="swiper-slide">4</div>\n        <div class="swiper-slide">5</div>\n        <div class="swiper-slide">6</div>\n        <div class="swiper-slide">7</div>\n        <div class="swiper-slide">8</div>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Volumes/Project/Ionic slide/slides/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/arash1/Projects/Ionic3-swiper/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <!-- <div #usefulSwiper [swiper]="config" class="swiper-container">\n    <div class="swiper-wrapper">\n        <div class="swiper-slide">1</div>\n        <div class="swiper-slide">2</div>\n        <div class="swiper-slide">3</div>\n        <div class="swiper-slide">4</div>\n        <div class="swiper-slide">5</div>\n        <div class="swiper-slide">6</div>\n        <div class="swiper-slide">7</div>\n        <div class="swiper-slide">8</div>\n    </div>\n  </div> -->\n  <ion-slides>\n    <ion-slide [style.background-color]="\'red\'">1</ion-slide>\n    <ion-slide [style.background-color]="\'red\'">1</ion-slide>\n    <ion-slide [style.background-color]="\'red\'">1</ion-slide>\n    <ion-slide [style.background-color]="\'red\'">1</ion-slide>\n    <ion-slide [style.background-color]="\'red\'">1</ion-slide>\n    <ion-slide [style.background-color]="\'red\'">1</ion-slide>\n    <ion-slide [style.background-color]="\'red\'">1</ion-slide>\n    <ion-slide [style.background-color]="\'red\'">1</ion-slide>\n    <ion-slide [style.background-color]="\'red\'">1</ion-slide>\n  </ion-slides>\n</ion-content>  \n\n\n'/*ion-inline-end:"/Users/arash1/Projects/Ionic3-swiper/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _b || Object])
     ], HomePage);
     return HomePage;
-    var _a;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -194,7 +198,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Volumes/Project/Ionic slide/slides/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Volumes/Project/Ionic slide/slides/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/arash1/Projects/Ionic3-swiper/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/arash1/Projects/Ionic3-swiper/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);

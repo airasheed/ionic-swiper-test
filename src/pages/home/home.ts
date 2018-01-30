@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, Slides } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -8,21 +8,26 @@ import { NavController } from 'ionic-angular';
 export class HomePage  {
 
   public config: Object;
+  
+  @ViewChild(Slides) private slides: Slides;
 
   constructor(public navCtrl: NavController) {
-    this.config = {
-      effect: 'coverflow',
-      grabCursor: true,
-      loop: true,
-      spaceBetween: '10%',
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 0,
-        depth: 100,
-        slideShadows : true,
-      }
-    };
+
+  }
+
+  public ngOnInit() {
+    this.slides.effect = 'coverflow';
+    this.slides.centeredSlides = true;
+    this.slides.slidesPerView = 1;
+    this.slides.spaceBetween = '2';
+    
+    this.slides.coverflow = {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    }
   }
 
 }
